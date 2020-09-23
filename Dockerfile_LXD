@@ -1,0 +1,8 @@
+FROM centos
+MAINTAINER Andres Diaz
+RUN yum install httpd -y
+RUN echo -e "<h1> Pagina de prueba LXD - DOCKER </h1> \n" \
+"<p>Bienvenidos a mi contenedor web docker</p> \n" \
+"<p>Presentado por Andres Diaz 2130104</p>"  > /var/www/html/index.html
+EXPOSE 80
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
