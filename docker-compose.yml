@@ -1,0 +1,12 @@
+version: '3'
+services:
+  vsftpd:
+    image: fauria/vsftpd
+    environment:
+      - FTP_USER=adiaz
+      - FTP_PASS=12345
+    volumes:
+      - /home/vsftpd/adiaz
+    expose:
+      - 21
+    network_mode: host
